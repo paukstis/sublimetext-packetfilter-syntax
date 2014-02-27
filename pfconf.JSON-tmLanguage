@@ -1,0 +1,80 @@
+// ===========================================================
+// OpenBSD PacketFilter syntax highlight for SublimeText,
+// v.0.0.1
+// https://github.com/paukstis/sublimetext-packetfilter-syntax
+// http://manual.macromates.com/en/language_grammars
+// ===========================================================
+{ "name": "OpenBSD PF conf",
+  "scopeName": "source.pfconf",
+  "fileTypes": ["pfconf"],
+  "uuid": "132f6dba-2e9a-4b80-bdac-0274645b81a2",
+  "patterns": [
+    { "match": "\\$[A-Za-z0-9_\\-]+",
+      "name": "variable.pfconf",
+      "comment": "variables"
+    },
+    { "match": "^\\#.*$",
+      "name": "comment.line.pfconf",
+      "comment": "comments"
+    },
+    { "match": "<[a-zA-Z0-9_\\-\\.]+>",
+      "name": "markup.bold.pfconf",
+      "comment": "tables"
+    },
+    { "match": "[\\!:<>,]",
+      "name": "constant.pfconf",
+      "comment": "operators"
+    },
+    { "match": "[{}\\(\\)]",
+      "name": "storage.modifier.pfconf",
+      "comment": "lists"
+    },
+
+    { "match": "\\/[0-9]+",
+      "name": "markup.italic.pfconf",
+      "comment": "numeric netmasks"
+    },
+    { "match": "[\\\"](.+)[\\\"]",
+      "name": "string.pfconf",
+      "captures": {
+        "1": { "name": "string.pfconf" }
+      },
+      "comment": "strings"
+    },
+    { "match": "^(\\S+)\\s*=",
+      "name": "",
+      "captures": {
+        "1": { "name": "entity.name.pfconf" }
+      },
+      "comment": "variables defs"
+    },
+    { "match": "(quick|persist)",
+      "name": "markup.heading.pfconf",
+      "comment": "keywords qualifier"
+    },
+    { "match": "(tagged|tag)",
+      "name": "markup.quote.pfconf",
+      "comment": "keywords tag"
+    },
+    { "match": "(all|any|yes|no|drop|return)",
+      "name": "invalid.illegal.pfconf",
+      "comment": "keywords atom"
+    },
+    { "match": "(proto|inet6|inet|tcp|udp|icmp6|icmp|port|other|carp|pfsync|first|opening|closing|single|finwait|established|closed|multiple|error|states|frags|interval|frag)",
+      "name": "markup.list.pfconf",
+      "comment": "keywords builtin"
+    },
+    { "match": "(label|user|file|timeout|limit|optimization|block-policy|loginterface|require-order|skip|synproxy|state|parent|bandwidth|static-port)",
+      "name": "entity.name.pfconf",
+      "comment": "keywords def"
+    },
+    { "match": "(altq|anchor|antispoof|binat|pass|block|queue|match|scrub|table|set|in|out|rdr-to|divert-to|route-to|reply-to|nat-to|nat|rdr)",
+      "name": "keyword.control.pfconf",
+      "comment": "keywords main"
+    },
+    { "match": "(log)",
+      "name": "storage.pfconf",
+      "comment": "keywords attribute"
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>pfconf</string>
+	</array>
+	<key>name</key>
+	<string>OpenBSD PF conf</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>variables</string>
+			<key>match</key>
+			<string>\$[A-Za-z0-9_\-]+</string>
+			<key>name</key>
+			<string>variable.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>comments</string>
+			<key>match</key>
+			<string>^\#.*$</string>
+			<key>name</key>
+			<string>comment.line.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>tables</string>
+			<key>match</key>
+			<string>&lt;[a-zA-Z0-9_\-\.]+&gt;</string>
+			<key>name</key>
+			<string>markup.bold.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>operators</string>
+			<key>match</key>
+			<string>[\!:&lt;&gt;,]</string>
+			<key>name</key>
+			<string>constant.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>lists</string>
+			<key>match</key>
+			<string>[{}\(\)]</string>
+			<key>name</key>
+			<string>storage.modifier.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>numeric netmasks</string>
+			<key>match</key>
+			<string>\/[0-9]+</string>
+			<key>name</key>
+			<string>markup.italic.pfconf</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>string.pfconf</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>strings</string>
+			<key>match</key>
+			<string>[\"](.+)[\"]</string>
+			<key>name</key>
+			<string>string.pfconf</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.pfconf</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>variables defs</string>
+			<key>match</key>
+			<string>^(\S+)\s*=</string>
+			<key>name</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keywords qualifier</string>
+			<key>match</key>
+			<string>(quick|persist)</string>
+			<key>name</key>
+			<string>markup.heading.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keywords tag</string>
+			<key>match</key>
+			<string>(tagged|tag)</string>
+			<key>name</key>
+			<string>markup.quote.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keywords atom</string>
+			<key>match</key>
+			<string>(all|any|yes|no|drop|return)</string>
+			<key>name</key>
+			<string>invalid.illegal.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keywords builtin</string>
+			<key>match</key>
+			<string>(proto|inet6|inet|tcp|udp|icmp6|icmp|port|other|carp|pfsync|first|opening|closing|single|finwait|established|closed|multiple|error|states|frags|interval|frag)</string>
+			<key>name</key>
+			<string>markup.list.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keywords def</string>
+			<key>match</key>
+			<string>(label|user|file|timeout|limit|optimization|block-policy|loginterface|require-order|skip|synproxy|state|parent|bandwidth|static-port)</string>
+			<key>name</key>
+			<string>entity.name.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keywords main</string>
+			<key>match</key>
+			<string>(altq|anchor|antispoof|binat|pass|block|queue|match|scrub|table|set|in|out|rdr-to|divert-to|route-to|reply-to|nat-to|nat|rdr)</string>
+			<key>name</key>
+			<string>keyword.control.pfconf</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>keywords attribute</string>
+			<key>match</key>
+			<string>(log)</string>
+			<key>name</key>
+			<string>storage.pfconf</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.pfconf</string>
+	<key>uuid</key>
+	<string>132f6dba-2e9a-4b80-bdac-0274645b81a2</string>
+</dict>
+</plist>
